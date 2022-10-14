@@ -1,19 +1,15 @@
-public class Producent implements Runnable{
+public class Producer implements Runnable{
 
-    Bufor bufor;
+    Monitor monitor;
     int val = 0;
 
-    public Producent(Bufor bufor) {
-        this.bufor = bufor;
+    public Producer(Monitor monitor) {
+        this.monitor = monitor;
     }
 
     private void produce() throws InterruptedException {
-        System.out.println("PRODUCING");
-        bufor.put(new Portion(val));
-        System.out.println("Produced new Portion with value = " + val);
+        monitor.produce();
         val++;
-
-        Thread.sleep(600);
     }
 
     @Override
