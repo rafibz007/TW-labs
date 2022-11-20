@@ -22,7 +22,8 @@ public class Consumer implements Runnable{
 
     private void consume() throws InterruptedException {
         BuforFuture<Integer> future = bufor.consume(randInt(min, max));
-        Thread.sleep(Config.additionalTaskTime);
+        for (int i=0; i<Config.additionalTaskTime; i++)
+            Math.sin(i);
         future.awaitGet();
     }
 

@@ -29,9 +29,8 @@ public class Bufor {
                 while (2*halfOfMaxAmount - currentAmount < amount)
                     condition.await();
 
-                try {
-                    Thread.sleep(Config.mainTaskTime);
-                } catch (InterruptedException ignored) {}
+                for (int i=0; i<Config.mainTaskTime; i++)
+                    Math.sin(i);
 
                 currentAmount += amount;
                 condition.signal();
@@ -58,9 +57,8 @@ public class Bufor {
                 while (currentAmount < amount)
                     condition.await();
 
-                try {
-                    Thread.sleep(Config.mainTaskTime);
-                } catch (InterruptedException ignored) {}
+                for (int i=0; i<Config.mainTaskTime; i++)
+                    Math.sin(i);
 
                 currentAmount -= amount;
                 condition.signal();

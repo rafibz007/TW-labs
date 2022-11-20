@@ -9,22 +9,22 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         List<Integer> mainTaskTimes = List.of(
-                0,
-                500,
+                100,
                 1000,
-                1500,
-                2000
+                10000,
+                100000,
+                1000000,
+                10000000
         );
         List<Integer> additionalTaskTimes = List.of(
-                0,
-                500,
+                100,
                 1000,
-                1500,
-                2000
+                10000,
+                100000,
+                1000000,
+                10000000
         );
         List<Integer> pkAmounts = List.of(
-                1,
-                3,
                 5
         );
         int repetitionsPefConfig = 3;

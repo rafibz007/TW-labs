@@ -17,9 +17,8 @@ public class BuforServant {
         if (currentAmount + amount > maxAmount)
             throw new IllegalArgumentException(String.format("Producing value %d will exceed limit\n", amount));
 
-        try {
-            Thread.sleep(Config.mainTaskTime);
-        } catch (InterruptedException ignored) {}
+        for (int i=0; i<Config.mainTaskTime; i++)
+            Math.sin(i);
 
         currentAmount += amount;
         System.out.format("Produced %d (current: %d/%d)\n", amount, currentAmount, maxAmount);
@@ -31,9 +30,8 @@ public class BuforServant {
         if (currentAmount < amount)
             throw new IllegalArgumentException(String.format("Not enough resources to consume value %d", amount));
 
-        try {
-            Thread.sleep(Config.mainTaskTime);
-        } catch (InterruptedException ignored) {}
+        for (int i=0; i<Config.mainTaskTime; i++)
+            Math.sin(i);
 
         currentAmount -= amount;
         System.out.format("Consumed %d (current: %d/%d)\n", amount, currentAmount, maxAmount);

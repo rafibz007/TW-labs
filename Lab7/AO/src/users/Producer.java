@@ -22,7 +22,8 @@ public class Producer implements Runnable{
 
     private void produce() throws InterruptedException {
         BuforFuture<Integer> future = bufor.produce(randInt(min, max));
-        Thread.sleep(Config.additionalTaskTime);
+        for (int i=0; i<Config.additionalTaskTime; i++)
+            Math.sin(i);
         future.awaitGet();
     }
 

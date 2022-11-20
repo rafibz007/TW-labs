@@ -18,6 +18,8 @@ public class Producer implements Runnable{
 
     private void produce() throws InterruptedException {
         bufor.produce(randInt(min,max));
+        for (int i=0; i<Config.additionalTaskTime; i++)
+            Math.sin(i);
     }
 
     @Override
@@ -26,7 +28,6 @@ public class Producer implements Runnable{
             try {
                 double start = System.currentTimeMillis();
                 produce();
-                Thread.sleep(Config.additionalTaskTime);
                 double end = System.currentTimeMillis();
                 Config.amountOfAccesses.put(Thread.currentThread().getName(), Config.amountOfAccesses.getOrDefault(Thread.currentThread().getName(), 0)+1);
                 Config.accessTime.put(Thread.currentThread().getName(), Config.accessTime.getOrDefault(Thread.currentThread().getName(), 0D)+(end-start));

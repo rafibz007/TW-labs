@@ -18,6 +18,8 @@ public class Consumer implements Runnable{
 
     private void consume() throws InterruptedException {
         bufor.consume(randInt(min,max));
+        for (int i=0; i<Config.additionalTaskTime; i++)
+            Math.sin(i);
     }
 
     @Override
@@ -26,7 +28,6 @@ public class Consumer implements Runnable{
             try {
                 double start = System.currentTimeMillis();
                 consume();
-                Thread.sleep(Config.additionalTaskTime);
                 double end = System.currentTimeMillis();
                 Config.amountOfAccesses.put(Thread.currentThread().getName(), Config.amountOfAccesses.getOrDefault(Thread.currentThread().getName(), 0)+1);
                 Config.accessTime.put(Thread.currentThread().getName(), Config.accessTime.getOrDefault(Thread.currentThread().getName(), 0D)+(end-start));
