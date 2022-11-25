@@ -12,20 +12,24 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         List<Integer> mainTaskTimes = List.of(
-                100,
-                1000,
-                10000,
-                100000,
-                1000000,
-                10000000
+                0,
+                3000,
+                6000,
+                9000,
+                12000,
+                15000,
+                18000,
+                21000
         );
         List<Integer> additionalTaskTimes = List.of(
-                100,
-                1000,
-                10000,
-                100000,
-                1000000,
-                10000000
+                0,
+                3000,
+                6000,
+                9000,
+                12000,
+                15000,
+                18000,
+                21000
         );
         List<Integer> pkAmounts = List.of(
                 5
@@ -49,6 +53,7 @@ public class Main {
     public static void measure(int pkAmount) throws InterruptedException, IOException {
         int m = 500;
         Bufor bufor = new Bufor(2*m); // minimum maxAmount is 2*(max produce/consume amount) to prevent blocking
+        m /= 2;
 
         int seed = 1000;
         Random generator = new Random(seed);
@@ -89,7 +94,7 @@ public class Main {
         long start = System.currentTimeMillis();
         threads.forEach(Thread::start);
 
-        Thread.sleep(20*1000);
+        Thread.sleep(15*1000);
 
         threads.forEach(Thread::stop);
         bufor.buferSchedulerThread.stop();
