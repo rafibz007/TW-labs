@@ -13,7 +13,9 @@
           <root url="jar://$MODULE_DIR$/../jscp-jar/jcsp.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../jscp-jar/jcsp.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
