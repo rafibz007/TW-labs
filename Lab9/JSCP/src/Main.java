@@ -15,11 +15,11 @@ public class Main {
         Logger logger = new Logger(buffer);
 
         List<Consumer> consumers = new ArrayList<>();
-        for (int i=0; i<15; i++)
+        for (int i=0; i<20; i++)
             consumers.add(new Consumer());
 
         List<Producer> producers = new ArrayList<>();
-        for (int i=0; i<20; i++)
+        for (int i=0; i<15; i++)
             producers.add(new Producer());
 
         consumers.forEach(buffer::registerConsumer);

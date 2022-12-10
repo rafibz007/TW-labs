@@ -27,8 +27,16 @@ public class Buffer {
             consumerNodes.add(consumerNode);
             for (ProducerNode producerNode : producerNodes) {
                 One2OneChannelInt channel = Channel.one2oneInt();
+                One2OneChannelInt requestChannel = Channel.one2oneInt();
+                One2OneChannelInt responseChannel = Channel.one2oneInt();
+
                 producerNode.addOutputChannel(channel);
+                producerNode.addOutputRequestChannel(requestChannel);
+                producerNode.addOutputResponseChannel(responseChannel);
+
                 consumerNode.addInputChannel(channel);
+                consumerNode.addInputRequestChannel(requestChannel);
+                consumerNode.addInputResponseChannel(responseChannel);
             }
         }
     }

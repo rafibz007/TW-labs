@@ -11,7 +11,7 @@ public class Consumer implements CSProcess {
 
     private final List<One2OneChannelInt> inputChannels;
     private final List<One2OneChannelInt> requestChannels;
-    private final Random generator = new Random(1000);
+    private final Random generator = new Random();
 
     public Consumer(List<One2OneChannelInt> inputChannels, List<One2OneChannelInt> requestChannels) {
         this.inputChannels = inputChannels;

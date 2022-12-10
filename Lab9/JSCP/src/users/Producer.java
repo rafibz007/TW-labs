@@ -10,7 +10,7 @@ import java.util.Random;
 public class Producer implements CSProcess {
 
     private final List<One2OneChannelInt> outputChannels;
-    private final Random generator = new Random(1000);
+    private final Random generator = new Random();
 
     public Producer(List<One2OneChannelInt> outputChannels) {
         this.outputChannels = outputChannels;
